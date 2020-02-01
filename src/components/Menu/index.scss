@@ -1,0 +1,24 @@
+.menu {
+    position: absolute;
+    width: 35px;
+    left: 0;
+    top: 0;
+    border: 1px solid rgb(219, 219, 219);
+    height: 100vh;
+    &__collapse {
+        float: right;
+        margin: 3px;
+    }
+    &__icon-wrapper:nth-child(2) {
+        border-right: 1px solid #e37222;
+    }
+    &__icon-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+        padding: 1px;
+        width: 28px;
+        height: 26px;
+    }
+}

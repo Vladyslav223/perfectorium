@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/perfectorium/static/css/main.d1b05096.chunk.css",
+    "main.js": "/perfectorium/static/js/main.066500fd.chunk.js",
+    "main.js.map": "/perfectorium/static/js/main.066500fd.chunk.js.map",
+    "runtime-main.js": "/perfectorium/static/js/runtime-main.2c1cd1fb.js",
+    "runtime-main.js.map": "/perfectorium/static/js/runtime-main.2c1cd1fb.js.map",
+    "static/js/2.80cc2e9a.chunk.js": "/perfectorium/static/js/2.80cc2e9a.chunk.js",
+    "static/js/2.80cc2e9a.chunk.js.map": "/perfectorium/static/js/2.80cc2e9a.chunk.js.map",
+    "index.html": "/perfectorium/index.html",
+    "precache-manifest.72d0276743b1651836b483e13f9d84e2.js": "/perfectorium/precache-manifest.72d0276743b1651836b483e13f9d84e2.js",
+    "service-worker.js": "/perfectorium/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/perfectorium/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.80cc2e9a.chunk.js.LICENSE.txt": "/perfectorium/static/js/2.80cc2e9a.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/perfectorium/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2c1cd1fb.js",
+    "static/js/2.80cc2e9a.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.066500fd.chunk.js"
+  ]
+}

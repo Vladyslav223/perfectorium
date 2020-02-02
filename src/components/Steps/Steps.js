@@ -16,11 +16,12 @@ import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { deepOrange } from '@material-ui/core/colors';
 import "./index.scss";
+//import { onClickUser } from '../../store/actions.js'
 
 const ColorButton = withStyles(theme => ({
   root: {
-    color: theme.palette.getContrastText(deepOrange[100]),
-    backgroundColor: deepOrange[100],
+    color: "white",
+    backgroundColor: deepOrange[200],
     '&:hover': {
       backgroundColor: deepOrange[300],
     },
@@ -36,10 +37,7 @@ const ColorlibConnector = withStyles({
   active: {
     '& $line': {
       backgroundColor: '#22c1c6',
-    },
-    '& $line': {
-      backgroundColor: '#22c1c6',
-    },
+    },    
   },
   completed: {
     '& $line': {
@@ -82,16 +80,18 @@ function ColorlibStepIcon(props) {
   const { active, completed } = props;
   const icons = {
     1: <img alt="icon" src="../icons/step1.png"></img>,
-    2: <img alt="icon" src="../icons/step2.png"></img>,
-    3: <img alt="icon" src="../icons/step3.png"></img>,
-    4: <img alt="icon" src="../icons/step4.png"></img>,
+    2: <img alt="icon" src="../icons/step1.png"></img>,
+    3: <img alt="icon" src="../icons/step2.png"></img>,
+    4: <img alt="icon" src="../icons/step3.png"></img>,
+    5: <img alt="icon" src="../icons/step4.png"></img>,
   };
 
   const iconsActive = {
-    1: <img alt="icon" src="../icons/step1b.png"></img>,
-    2: <img alt="icon" src="../icons/step2b.png"></img>,
-    3: <img alt="icon" src="../icons/step3b.png"></img>,
-    4: <img alt="icon" src="../icons/step4b.png"></img>,
+    1: <img alt="icon" src="../icons/step2b.png"></img>,
+    2: <img alt="icon" src="../icons/step1b.png"></img>,
+    3: <img alt="icon" src="../icons/step2b.png"></img>,
+    4: <img alt="icon" src="../icons/step3b.png"></img>,
+    5: <img alt="icon" src="../icons/step4b.png"></img>,
   };
 
   return (
@@ -115,7 +115,6 @@ ColorlibStepIcon.propTypes = {
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    color: 'green',
     marginLeft: '7%',
   },
   button: {
@@ -134,20 +133,18 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Step1. Recieving user information 1';
+      return 'Hello!';
     case 1:
-      return 'Step2. Information 1 recieved. Recieving user information 2';
+      return 'Step1. Receiving user information 1';
     case 2:
-      return 'Step3. Information 1 & 2 recieved. Recieving user information 3';
+      return 'Step2. Information 1 received. Receiving user information 2';
     case 3:
-      return 'Step4. Information 1 & 2 & 3 recieved. Recieving user information 4';
+      return 'Step3. Information 1 & 2 received. Receiving user information 3';
     default:
       return 'Unknown step';
   }
 }
-function handleSubmit(event) {
-    event.preventDefault();
-}
+
 export default function CustomizedSteppers() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(1);
@@ -155,6 +152,7 @@ export default function CustomizedSteppers() {
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
+    console.log(activeStep);
   };
 
   const handleBack = () => {
@@ -163,12 +161,12 @@ export default function CustomizedSteppers() {
 
   const handleReset = () => {
     setActiveStep(0);
-  };
+  };  
 
   return (
-    <div className={classes.root + ' steps'}>
+    <div className={classes.root}>
          
-      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
+      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}><div className="first-line"></div>   
         {steps.map(label => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}><div className="label">{label}</div></StepLabel>
@@ -178,9 +176,15 @@ export default function CustomizedSteppers() {
        {activeStep === steps.length ? (
           <div>
             <Typography className={classes.instructions}>
+            Information 1, 2 and 3 received.
               All steps completed!
             </Typography>
-            <Button onClick={handleReset} className={classes.button}>
+            <Button 
+              variant="contained"
+              color="primary"
+              onClick={handleReset}
+              className={classes.button}
+            >
               Reset
             </Button>
           </div>
@@ -188,26 +192,32 @@ export default function CustomizedSteppers() {
           <div>
             <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
-              <Button disabled={activeStep === 0} onClick={handleBack} className={classes.button}>
-                Back
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleNext}
-                className={classes.button}
-              >
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-              <ButtonCustom title={activeStep === steps.length - 1 ? 'Finish' : 'Next'} onClick={handleNext} variant="contained" color="primary" className={classes.button} />
+              <form className="form">
+                  <input type="checkbox"></input>
+                  <label>I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
+                  <Button
+                    style={{color: "gray"}}
+                    variant="contained"
+                    color="default"
+                    disabled={activeStep === 0}
+                    onClick={handleBack}
+                    className={classes.button}
+                  >
+                    Back
+                  </Button>
+                  <ColorButton
+                    variant="contained"
+                    color="primary"
+                    onClick={handleNext}
+                    className={classes.button}
+                  >
+                    {activeStep === steps.length - 1 ? 'Finish' : 'DISPATCH'}
+                  </ColorButton>
+              </form>    
+              
             </div>
           </div>
-        )} 
-        <form className="form" onSubmit={handleSubmit}>
-            <input type="checkbox"></input>
-            <label>I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
-            <button className="form__dispatch" type="submit">DISPATCH</button>
-        </form>        
+        )}           
     </div>
   );
 }

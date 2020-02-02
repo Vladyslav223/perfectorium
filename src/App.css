@@ -1,4 +1,7 @@
-.App {
+@import url('https://fonts.googleapis.com/css?family=Assistant:300,400&display=swap');
+
+.App, p {
   text-align: center;
+  font-family: 'Assistant', sans-serif!important;
 }
 

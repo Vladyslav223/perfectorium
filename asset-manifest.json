@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/perfectorium/static/css/main.16cee10d.chunk.css",
-    "main.js": "/perfectorium/static/js/main.6102c74d.chunk.js",
-    "main.js.map": "/perfectorium/static/js/main.6102c74d.chunk.js.map",
+    "main.js": "/perfectorium/static/js/main.8d6fa525.chunk.js",
+    "main.js.map": "/perfectorium/static/js/main.8d6fa525.chunk.js.map",
     "runtime-main.js": "/perfectorium/static/js/runtime-main.2c1cd1fb.js",
     "runtime-main.js.map": "/perfectorium/static/js/runtime-main.2c1cd1fb.js.map",
     "static/css/2.764ccc25.chunk.css": "/perfectorium/static/css/2.764ccc25.chunk.css",
     "static/js/2.c9a01cf9.chunk.js": "/perfectorium/static/js/2.c9a01cf9.chunk.js",
     "static/js/2.c9a01cf9.chunk.js.map": "/perfectorium/static/js/2.c9a01cf9.chunk.js.map",
     "index.html": "/perfectorium/index.html",
-    "precache-manifest.9078cc1d1737a6fe857140721f627478.js": "/perfectorium/precache-manifest.9078cc1d1737a6fe857140721f627478.js",
+    "precache-manifest.99ec879272be9b9693c5fe7550500c68.js": "/perfectorium/precache-manifest.99ec879272be9b9693c5fe7550500c68.js",
     "service-worker.js": "/perfectorium/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/perfectorium/static/css/2.764ccc25.chunk.css.map",
     "static/css/main.16cee10d.chunk.css.map": "/perfectorium/static/css/main.16cee10d.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.c9a01cf9.chunk.js",
     "static/css/main.16cee10d.chunk.css",
-    "static/js/main.6102c74d.chunk.js"
+    "static/js/main.8d6fa525.chunk.js"
   ]
 }

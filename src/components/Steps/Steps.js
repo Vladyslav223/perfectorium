@@ -79,7 +79,6 @@ function ColorlibStepIcon(props) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
   const icons = {
-    1: <img alt="icon" src="../icons/step1.png"></img>,
     2: <img alt="icon" src="../icons/step1.png"></img>,
     3: <img alt="icon" src="../icons/step2.png"></img>,
     4: <img alt="icon" src="../icons/step3.png"></img>,
@@ -87,7 +86,6 @@ function ColorlibStepIcon(props) {
   };
 
   const iconsActive = {
-    1: <img alt="icon" src="../icons/step2b.png"></img>,
     2: <img alt="icon" src="../icons/step1b.png"></img>,
     3: <img alt="icon" src="../icons/step2b.png"></img>,
     4: <img alt="icon" src="../icons/step3b.png"></img>,

@@ -20,7 +20,7 @@ clickHandle = () => {
     const disableCollapse = collapse ? "menu__points" : "menu__points-disabled";
     return (
       <div className="menu">
-        <img onClick={this.clickHandle} className={collapse ? "menu__icon menu__collapse-button" : "menu__icon menu__collapse-button menu__scaled"} alt="menu icon" src="../icons/collapse.png"/>
+        <img onClick={this.clickHandle} className={collapse ? "menu__icon menu__collapse-button" : "menu__icon menu__collapse-button menu__scaled"} alt="menu icon" src="icons/collapse.png"/>
         <div className={!collapse ? "menu__collapse menu__collapse-collapsed" : "menu__collapse"}>
           <div className="menu__icons-wrap">
             <div className={!collapse ? "menu__icon-wrapper" : "menu__icon-wrapper-collapsed"}><img className="menu__icon" alt="menu icon" src="icons/1.png"/></div>

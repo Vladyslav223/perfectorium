@@ -17,15 +17,15 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { deepOrange } from '@material-ui/core/colors';
 import "./index.scss";
 
-// const ColorButton = withStyles(theme => ({
-//   root: {
-//     color: theme.palette.getContrastText(deepOrange[100]),
-//     backgroundColor: deepOrange[100],
-//     '&:hover': {
-//       backgroundColor: deepOrange[300],
-//     },
-//   },
-// }))(Button);
+const ColorButton = withStyles(theme => ({
+  root: {
+    color: theme.palette.getContrastText(deepOrange[100]),
+    backgroundColor: deepOrange[100],
+    '&:hover': {
+      backgroundColor: deepOrange[300],
+    },
+  },
+}))(Button);
 
 const ColorlibConnector = withStyles({
   alternativeLabel: {
@@ -36,7 +36,10 @@ const ColorlibConnector = withStyles({
   active: {
     '& $line': {
       backgroundColor: '#22c1c6',
-    },    
+    },
+    '& $line': {
+      backgroundColor: '#22c1c6',
+    },
   },
   completed: {
     '& $line': {
@@ -165,7 +168,7 @@ export default function CustomizedSteppers() {
   return (
     <div className={classes.root + ' steps'}>
          
-      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}><div className="first-line"></div>   
+      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
         {steps.map(label => (
           <Step key={label}>
             <StepLabel StepIconComponent={ColorlibStepIcon}><div className="label">{label}</div></StepLabel>
@@ -196,7 +199,7 @@ export default function CustomizedSteppers() {
               >
                 {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
               </Button>
-              {/* <ButtonCustom title={activeStep === steps.length - 1 ? 'Finish' : 'Next'} onClick={handleNext} variant="contained" color="primary" className={classes.button} /> */}
+              <ButtonCustom title={activeStep === steps.length - 1 ? 'Finish' : 'Next'} onClick={handleNext} variant="contained" color="primary" className={classes.button} />
             </div>
           </div>
         )} 

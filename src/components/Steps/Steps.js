@@ -16,7 +16,7 @@ import Typography from '@material-ui/core/Typography';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { deepOrange } from '@material-ui/core/colors';
 import "./index.scss";
-//import { onClickUser } from '../../store/actions.js'
+//import { onClickUser } from 'store/actions.js'
 
 const ColorButton = withStyles(theme => ({
   root: {
@@ -79,17 +79,17 @@ function ColorlibStepIcon(props) {
   const classes = useColorlibStepIconStyles();
   const { active, completed } = props;
   const icons = {
-    2: <img alt="icon" src="../icons/step1.png"></img>,
-    3: <img alt="icon" src="../icons/step2.png"></img>,
-    4: <img alt="icon" src="../icons/step3.png"></img>,
-    5: <img alt="icon" src="../icons/step4.png"></img>,
+    2: <img alt="icon" src="icons/step1.png"></img>,
+    3: <img alt="icon" src="icons/step2.png"></img>,
+    4: <img alt="icon" src="icons/step3.png"></img>,
+    5: <img alt="icon" src="icons/step4.png"></img>,
   };
 
   const iconsActive = {
-    2: <img alt="icon" src="../icons/step1b.png"></img>,
-    3: <img alt="icon" src="../icons/step2b.png"></img>,
-    4: <img alt="icon" src="../icons/step3b.png"></img>,
-    5: <img alt="icon" src="../icons/step4b.png"></img>,
+    2: <img alt="icon" src="icons/step1b.png"></img>,
+    3: <img alt="icon" src="icons/step2b.png"></img>,
+    4: <img alt="icon" src="icons/step3b.png"></img>,
+    5: <img alt="icon" src="icons/step4b.png"></img>,
   };
 
   return (

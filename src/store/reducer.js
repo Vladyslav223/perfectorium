@@ -16,8 +16,7 @@ export const reducer = (state = initialState, action ) => {
     switch (action.type) {
         case DISPATCH:
           return {
-            ...state,
-            ["data"+action.payload.step]: action.payload.data
+            ...state,           
           };      
     
         default:

@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
 import 'normalize.css';
-import Steps from "./components/Steps/Steps.js";
+import Steps from "./components/Steps";
 import Bottom from "./components/Bottom";
 import Menu from "./components/Menu";
-import Main from "./components/Main";
 
 function App() {
   return (
     <div className="App">
       <Steps/>
-      {/* <Main/> */}
       <Bottom/>
       <Menu/>
     </div>

@@ -5,17 +5,12 @@ import clsx from 'clsx';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
-import Check from '@material-ui/icons/Check';
-import SettingsIcon from '@material-ui/icons/Settings';
-import GroupAddIcon from '@material-ui/icons/GroupAdd';
-import VideoLabelIcon from '@material-ui/icons/VideoLabel';
 import StepConnector from '@material-ui/core/StepConnector';
 import Button from '@material-ui/core/Button';
-import ButtonCustom from './ButtonCustom';
 import Typography from '@material-ui/core/Typography';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { deepOrange } from '@material-ui/core/colors';
 import "./index.scss";
+
 //import { onClickUser } from 'store/actions.js'
 
 const ColorButton = withStyles(theme => ({
@@ -131,7 +126,7 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return 'Hello!';
+      return 'Hello! Plese agree with our terms.';
     case 1:
       return 'Step1. Receiving user information 1';
     case 2:
@@ -143,14 +138,16 @@ function getStepContent(step) {
   }
 }
 
-export default function CustomizedSteppers() {
+export default function CustomizedSteppers(props) {
+  const { onDispatch } = props;
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
 
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-    console.log(activeStep);
+  const handleNext = (event) => {
+    event.preventDefault();
+    event.target[0].checked && setActiveStep(prevActiveStep => prevActiveStep + 1);
+    event.target[0].checked && onDispatch(activeStep, event.target[0].checked);   
   };
 
   const handleBack = () => {
@@ -190,7 +187,7 @@ export default function CustomizedSteppers() {
           <div>
             <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
-              <form className="form">
+              <form className="form" onSubmit={handleNext}>
                   <input type="checkbox"></input>
                   <label>I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
                   <Button
@@ -204,9 +201,9 @@ export default function CustomizedSteppers() {
                     Back
                   </Button>
                   <ColorButton
+                    type="submit"
                     variant="contained"
                     color="primary"
-                    onClick={handleNext}
                     className={classes.button}
                   >
                     {activeStep === steps.length - 1 ? 'Finish' : 'DISPATCH'}
@@ -219,3 +216,4 @@ export default function CustomizedSteppers() {
     </div>
   );
 }
+

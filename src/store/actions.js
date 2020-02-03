@@ -6,12 +6,12 @@ export const ACTION_TYPES = {
     DISPATCH,    
   } = ACTION_TYPES;
   
-  const dataToStore = ({ data, step }) => ({
+  export const dataToStore = payload => ({
     type: DISPATCH,
-    payload: { data, step },
+    payload
   });
 
-  export const onDispatch = (data, step) => dispatch => {
-    dispatch(dataToStore(data, step));
+  export const onDispatch = (step, data) => dispatch => {
+    dispatch(dataToStore(step, data));
   }
   

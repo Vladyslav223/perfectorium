@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "747b0399941bb8dcde8c8321223d745f",
+    "revision": "0e1ce58f73bef4683a44b1258afdd981",
     "url": "/perfectorium/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/perfectorium/static/css/2.764ccc25.chunk.css"
   },
   {
-    "revision": "004ae9b72837d4323a26",
+    "revision": "6d023c77f26d2e1f9ca6",
     "url": "/perfectorium/static/css/main.a0597c59.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/perfectorium/static/js/2.3f2eb9ca.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "004ae9b72837d4323a26",
-    "url": "/perfectorium/static/js/main.70afb7a7.chunk.js"
+    "revision": "6d023c77f26d2e1f9ca6",
+    "url": "/perfectorium/static/js/main.b706903e.chunk.js"
   },
   {
     "revision": "a052c9be1993336e1b2e",

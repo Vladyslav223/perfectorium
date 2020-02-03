@@ -26,6 +26,7 @@ const ColorButton = withStyles(theme => ({
 const ColorlibConnector = withStyles({
   alternativeLabel: {
     top: 16,
+    width: "100%",
     marginLeft: "-5px",
   },
   active: {

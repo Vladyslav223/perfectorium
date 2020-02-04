@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
@@ -10,8 +10,6 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { deepOrange } from '@material-ui/core/colors';
 import "./index.scss";
-
-//import { onClickUser } from 'store/actions.js'
 
 const ColorButton = withStyles(theme => ({
   root: {
@@ -108,7 +106,6 @@ ColorlibStepIcon.propTypes = {
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    marginLeft: '7%',
   },
   button: {
     marginRight: theme.spacing(1),
@@ -125,8 +122,6 @@ function getSteps() {
 
 function getStepContent(step) {
   switch (step) {
-    case 0:
-      return 'Hello! Plese agree with our terms.';
     case 1:
       return 'Step1. Receiving user information 1';
     case 2:
@@ -139,25 +134,32 @@ function getStepContent(step) {
 }
 
 export default function CustomizedSteppers(props) {
-  const { onDispatch } = props;
+  const { onDispatch, onBack, onFinish, onReset } = props;  
+  const [val, changeVal] = useState(false);
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(1);
   const steps = getSteps();
 
   const handleNext = (event) => {
     event.preventDefault();
-    event.target[0].checked && setActiveStep(prevActiveStep => prevActiveStep + 1);
-    event.target[0].checked && onDispatch(activeStep, event.target[0].checked);   
+    setActiveStep(prevActiveStep => prevActiveStep + 1);
+    onDispatch(activeStep, event.target[0].checked);
+    if(activeStep === 3) {
+      onFinish();
+    }   
   };
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
+    onBack(activeStep);
   };
 
   const handleReset = () => {
-    setActiveStep(0);
+    setActiveStep(1);
+    onReset();
+    changeVal(!val);
   };  
-
+ 
   return (
     <div className={classes.root}>
          
@@ -169,7 +171,7 @@ export default function CustomizedSteppers(props) {
         ))}
       </Stepper>
        {activeStep === steps.length ? (
-          <div>
+          <>
             <Typography className={classes.instructions}>
             Information 1, 2 and 3 received.
               All steps completed!
@@ -182,19 +184,19 @@ export default function CustomizedSteppers(props) {
             >
               Reset
             </Button>
-          </div>
+          </>
         ) : (
-          <div>
+          <>
             <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
             <div>
               <form className="form" onSubmit={handleNext}>
-                  <input type="checkbox"></input>
-                  <label>I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
+                  <input className="input" id="input" onChange={() => changeVal(!val)} type="checkbox"></input>
+                  <label className="input" htmlFor="input">I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
                   <Button
                     style={{color: "gray"}}
                     variant="contained"
                     color="default"
-                    disabled={activeStep === 0}
+                    disabled={activeStep === 1}
                     onClick={handleBack}
                     className={classes.button}
                   >
@@ -204,14 +206,15 @@ export default function CustomizedSteppers(props) {
                     type="submit"
                     variant="contained"
                     color="primary"
-                    className={classes.button}
+                    className={classes.button}                    
+                    disabled={!val}
                   >
                     {activeStep === steps.length - 1 ? 'Finish' : 'DISPATCH'}
                   </ColorButton>
               </form>    
               
             </div>
-          </div>
+          </>
         )}           
     </div>
   );

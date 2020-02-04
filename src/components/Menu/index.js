@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 
 import "./index.scss";
-
-
-
 class Menu extends Component {
 state = {
   collapse: false,
@@ -37,8 +34,7 @@ clickHandle = () => {
             <p className={disableCollapse}>Point 4</p>
             <p className={disableCollapse}>Point 5</p>
             <p className={disableCollapse}>Point 6</p>
-          </div>
-          
+          </div>          
        </div>
       </div>
     );

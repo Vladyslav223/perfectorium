@@ -15,10 +15,7 @@
     position: absolute;
     right: 4px;
     top: 270px;
-    &__dispatch {
-        
-    }
-
+    
     & button {
         margin-top: 15px;
     }
@@ -33,6 +30,10 @@
     left: 90px;
 }
 
-.MuiStepLabel-active, .MuiStepLabel-completed {
-    color: #22c1c6!important;
+.MuiStepLabel-active .label, .MuiStepLabel-completed .label {
+    color: #22c1c6;
+}
+
+.input {
+    cursor: pointer;
 }

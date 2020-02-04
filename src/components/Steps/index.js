@@ -1,17 +1,16 @@
 import { connect } from 'react-redux';
 import Steps from './Steps';
-import { onDispatch } from '../../store/actions';
+import { onDispatch, onBack, onFinish, onReset } from '../../store/actions';
 
-const mapStateToProps = state => ({
-  data1: "tra",
-});
-
-const mapDispatchToProps = dispatch => ({
-  onDispatch: () => dispatch(onDispatch()),
-});
+const mapDispatchToProps = {
+  onDispatch, 
+  onBack,
+  onFinish,
+  onReset,
+};
 
 export default connect(  
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(Steps);
 

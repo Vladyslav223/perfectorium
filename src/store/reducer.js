@@ -26,7 +26,7 @@ export const reducer = (state = initialState, action ) => {
         case BACK:
             return {
               ...state,
-              ["data" + action.payload.step]: false,
+              ["data" + (action.payload.step - 1)]: false,
             };      
 
         case FINISH:

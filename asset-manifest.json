@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/perfectorium/static/css/main.266cf1a2.chunk.css",
+    "main.css": "/perfectorium/static/css/main.088db053.chunk.css",
     "main.js": "/perfectorium/static/js/main.94ecc88a.chunk.js",
     "main.js.map": "/perfectorium/static/js/main.94ecc88a.chunk.js.map",
     "runtime-main.js": "/perfectorium/static/js/runtime-main.2c1cd1fb.js",
@@ -9,17 +9,17 @@
     "static/js/2.ccd51163.chunk.js": "/perfectorium/static/js/2.ccd51163.chunk.js",
     "static/js/2.ccd51163.chunk.js.map": "/perfectorium/static/js/2.ccd51163.chunk.js.map",
     "index.html": "/perfectorium/index.html",
-    "precache-manifest.31c3f920d805169a12a5d881aa4128a1.js": "/perfectorium/precache-manifest.31c3f920d805169a12a5d881aa4128a1.js",
+    "precache-manifest.4e6320e4915f9d109924a743ef87b2d5.js": "/perfectorium/precache-manifest.4e6320e4915f9d109924a743ef87b2d5.js",
     "service-worker.js": "/perfectorium/service-worker.js",
     "static/css/2.764ccc25.chunk.css.map": "/perfectorium/static/css/2.764ccc25.chunk.css.map",
-    "static/css/main.266cf1a2.chunk.css.map": "/perfectorium/static/css/main.266cf1a2.chunk.css.map",
+    "static/css/main.088db053.chunk.css.map": "/perfectorium/static/css/main.088db053.chunk.css.map",
     "static/js/2.ccd51163.chunk.js.LICENSE.txt": "/perfectorium/static/js/2.ccd51163.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2c1cd1fb.js",
     "static/css/2.764ccc25.chunk.css",
     "static/js/2.ccd51163.chunk.js",
-    "static/css/main.266cf1a2.chunk.css",
+    "static/css/main.088db053.chunk.css",
     "static/js/main.94ecc88a.chunk.js"
   ]
 }

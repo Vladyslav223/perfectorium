@@ -9,7 +9,9 @@ import StepConnector from '@material-ui/core/StepConnector';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { deepOrange } from '@material-ui/core/colors';
+
 import "./index.scss";
+import "./arrow.scss";
 
 const ColorButton = withStyles(theme => ({
   root: {
@@ -123,11 +125,11 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 1:
-      return 'Step1. Receiving user information 1';
+      return 'Step 1. We simulate receiving data 1 from the user using the checkbox.';
     case 2:
-      return 'Step2. Information 1 received. Receiving user information 2';
+      return 'Step2. Simulation 1 complete. Simulating receiving user information 2';
     case 3:
-      return 'Step3. Information 1 & 2 received. Receiving user information 3';
+      return 'Step3. Simulation 1 & 2 complete. Simulating receiving user information 3';
     default:
       return 'Unknown step';
   }
@@ -187,34 +189,36 @@ export default function CustomizedSteppers(props) {
           </>
         ) : (
           <>
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            <div>
-              <form className="form" onSubmit={handleNext}>
-                  <input className="input" id="input" onChange={() => changeVal(!val)} type="checkbox"></input>
-                  <label className="input" htmlFor="input">I agree to the <a href="http://google.com">Terms and Conditions</a></label><br/>
-                  <Button
-                    style={{color: "gray"}}
-                    variant="contained"
-                    color="default"
-                    disabled={activeStep === 1}
-                    onClick={handleBack}
-                    className={classes.button}
-                  >
-                    Back
-                  </Button>
-                  <ColorButton
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    className={classes.button}                    
-                    disabled={!val}
-                  >
-                    {activeStep === steps.length - 1 ? 'Finish' : 'DISPATCH'}
-                  </ColorButton>
-              </form>    
-              
-            </div>
-          </>
+            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>            
+              <div className="fake">
+                <div class="arrow-1">
+                    <div/>
+                </div>
+                           
+                <form className="form" onSubmit={handleNext}>
+                    <input className="input" id="input" onChange={() => changeVal(!val)} type="checkbox"></input>
+                    <label className="input label-check" htmlFor="input">I agree to begin now the <a href="http://google.com">Simulation</a></label><br/>
+                    <Button
+                      variant="contained"
+                      color="default"
+                      disabled={activeStep === 1}
+                      onClick={handleBack}
+                      className={classes.button}
+                    >
+                      Back
+                    </Button>
+                    <ColorButton
+                      type="submit"
+                      variant="contained"
+                      color="primary"
+                      className={classes.button}                    
+                      disabled={!val}
+                    >
+                      {activeStep === steps.length - 1 ? 'Finish' : 'SIMULATE'}
+                    </ColorButton>
+                </form>
+              </div>              
+            </>          
         )}           
     </div>
   );

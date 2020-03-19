@@ -1,0 +1,56 @@
+.arrow-1 {
+    cursor: pointer;
+    position: relative;
+    width: 80px;
+    height: 50px;
+    margin: 20px;
+}
+.arrow-1 div {
+    position: relative;
+    top: 20px;
+    width: 90px;
+    height: 10px;
+    background-color: #22c1c6;
+    box-shadow: -5px 10px 19px rgba(0, 0, 0, 0.3);
+    left:0;
+    display: block;
+}
+.arrow-1 div::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    top: -11px;
+    right: -8px;
+    background-color: #22c1c6;
+    transform: rotate(45deg);
+}
+.arrow-1 div::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    top: 11px;
+    right: -8px;
+    background-color: #22c1c6;
+    box-shadow: -5px 10px 19px rgba(0, 0, 0, 0.3);
+    transform: rotate(-45deg);
+}
+.arrow-1 {
+    animation: arrow-1 5s linear infinite;
+}
+@keyframes arrow-1 {
+    0% {
+        left:0;
+        opacity: .2;
+    }
+    50% {
+        left: 40px;
+        opacity: 1;
+        
+    }
+    100% {
+        left:0;
+        opacity: .2;
+    }
+}

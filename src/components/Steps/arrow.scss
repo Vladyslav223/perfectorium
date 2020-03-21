@@ -8,7 +8,7 @@
 .arrow-1 div {
     position: relative;
     top: 20px;
-    width: 90px;
+    width: 68px;
     height: 10px;
     background-color: #22c1c6;
     box-shadow: -5px 10px 19px rgba(0, 0, 0, 0.3);
@@ -18,9 +18,9 @@
 .arrow-1 div::after {
     content: '';
     position: absolute;
-    width: 40px;
+    width: 25px;
     height: 10px;
-    top: -11px;
+    top: -5px;
     right: -8px;
     background-color: #22c1c6;
     transform: rotate(45deg);
@@ -28,9 +28,9 @@
 .arrow-1 div::before {
     content: '';
     position: absolute;
-    width: 40px;
+    width: 25px;
     height: 10px;
-    top: 11px;
+    top: 5px;
     right: -8px;
     background-color: #22c1c6;
     box-shadow: -5px 10px 19px rgba(0, 0, 0, 0.3);

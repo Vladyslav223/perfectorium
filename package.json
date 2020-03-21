@@ -2,7 +2,7 @@
   "homepage": "https://Vladyslav223.github.io/portfolio_steps",
   "name": "portfolio_steps",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@material-ui/core": "^4.9.0",
     "@material-ui/icons": "^4.5.1",
